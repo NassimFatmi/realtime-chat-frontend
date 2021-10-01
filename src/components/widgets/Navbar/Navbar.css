@@ -1,0 +1,32 @@
+.navbar {
+	border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.navbar .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 57px;
+}
+.navbar .links li {
+	display: inline-block;
+	margin-left: 15px;
+}
+.navbar .logo .logo-icon {
+	height: 30px;
+	width: 30px;
+	color: var(--main-color);
+	cursor: pointer;
+}
+.navbar .links a:hover,
+.navbar .logo .logo-icon:hover {
+	color: var(--alt-main-color);
+}
+.logo {
+	display: flex;
+	align-items: center;
+	font-size: 0.8rem;
+	font-weight: 300;
+}
+.logo h4 {
+	margin-left: 5px;
+}

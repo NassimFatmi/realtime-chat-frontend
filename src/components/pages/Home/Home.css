@@ -1,0 +1,207 @@
+.messenger {
+	height: calc(100vh - 57px);
+	display: flex;
+	position: relative;
+}
+.messenger .notification {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	background-color: var(--main-color);
+	color: white;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.messenger .notificationBox {
+	position: absolute;
+	bottom: 60px;
+	left: 15px;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 6px;
+	box-shadow: 0 1px 3px 0px rgb(0 0 0 / 40%);
+}
+.messenger .notificationBox .invitation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.messenger .notificationBox .invitation .accepte,
+.messenger .notificationBox .invitation .delete {
+	padding: 8px;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+.messenger .notificationBox .invitation .accepte:hover {
+	color: green;
+}
+.messenger .notificationBox .invitation .delete:hover {
+	color: red;
+}
+.messenger .notificationBox .invitation p {
+	font-size: 12px;
+	color: rgb(0 0 0 / 40%);
+}
+.messenger .notification.new .badge {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 15px;
+	width: 15px;
+	font-size: 10px;
+	background-color: red;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.chatMenu {
+	flex: 0.5;
+	border-right: 1px solid rgb(0 0 0 / 8%);
+	position: relative;
+}
+.chatBox {
+	flex: 1;
+	border-right: 1px solid rgb(0 0 0 / 8%);
+}
+.chatMenuWrapper {
+	padding: 10px;
+}
+.chatBoxTop {
+	height: calc(100vh - 57px - 80px);
+	overflow-y: auto;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.chatBoxBottom {
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.chatBoxBottom .chatMessageInput {
+	padding: 10px 8px;
+	width: 100%;
+	border-radius: 6px;
+}
+.chatBoxBottom .chatMessageSend {
+	margin-left: 10px;
+}
+.noConversationMsg {
+	text-align: center;
+	margin-top: 50%;
+}
+.searchBox input {
+	width: 100%;
+}
+.searchList {
+	border: 1px solid rgb(0 0 0 / 8%);
+	padding: 8px;
+	border-radius: 6px;
+}
+.searchList .searchItem {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.searchList .searchItem span {
+	display: block;
+}
+.searchList .searchItem .searchItemId {
+	color: rgb(0 0 0 / 40%);
+	font-size: 12px;
+	margin-top: 5px;
+}
+.searchList .searchItem .sendInvite {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	color: green;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.searchList .searchItem .sendInvite:hover {
+	background-color: rgb(0 0 0 / 8%);
+}
+.searchList .searchItem:not(:last-child) {
+	border-bottom: 1px solid rgb(0 0 0 / 8%);
+}
+.toggleContacts {
+	position: absolute;
+	background-color: var(--main-color);
+	color: #fff;
+	height: 25px;
+	width: 25px;
+	justify-content: center;
+	align-items: center;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	cursor: pointer;
+	display: none;
+	opacity: 0.6;
+}
+.closeMenu {
+	position: absolute;
+	color: #f00;
+	top: 8px;
+	right: -50px;
+	z-index: 100;
+	background-color: #fff;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+@media (max-width: 768px) {
+	.messenger {
+		flex-direction: column;
+	}
+	.toggleContacts {
+		display: flex;
+	}
+	.messenger .chatMenu {
+		position: absolute;
+		left: -80%;
+		top: 0;
+		height: calc(100vh - 57px);
+		z-index: 1000;
+		background-color: #fff;
+		width: 80%;
+		box-shadow: 1px 0px 4px 0px rgb(0 0 0 / 8%);
+		transition: 0.4s;
+	}
+	.messenger.showContacts .chatMenu {
+		left: 0;
+	}
+	.messenger.showContacts .closeMenu {
+		display: flex;
+	}
+	.messenger.showContacts .toggleContacts {
+		display: block;
+	}
+	.messenger.showContacts::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100vh;
+		z-index: 100;
+		background-color: rgb(0 0 0 / 40%);
+		width: 100%;
+	}
+}
